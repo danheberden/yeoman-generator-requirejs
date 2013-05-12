@@ -7,6 +7,8 @@ var yeoman = require('yeoman-generator');
 var AppGenerator = module.exports = function AppGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
 
+  this.options = options || {};
+
   this.on('end', function () {
     this.installDependencies({ skipInstall: options['skip-install'] });
   });
@@ -17,6 +19,7 @@ var AppGenerator = module.exports = function AppGenerator(args, options, config)
 util.inherits(AppGenerator, yeoman.generators.NamedBase);
 
 AppGenerator.prototype.askFor = function askFor() {
+
   var cb = this.async();
 
   // welcome message
@@ -33,6 +36,13 @@ AppGenerator.prototype.askFor = function askFor() {
 
   console.log(welcome);
   console.log('This comes with requirejs, jquery, and grunt all ready to go');
+
+  if (this.options.promptDefaults) {
+     this.appname = this.options.promptDefaults.appname;
+     this.appdescription = this.options.promptDefaults.appdescription;
+     cb();
+     return;
+   }
 
   var prompts = [{
     name: 'appname',
@@ -86,6 +96,5 @@ AppGenerator.prototype.docs = function docs() {
 AppGenerator.prototype.app = function app() {
   this.directory('app', 'app');
   this.directory('test', 'test');
- // this.directory('libs', 'libs');
   this.template('index.htm', 'index.htm');
 };

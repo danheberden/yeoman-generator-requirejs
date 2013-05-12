@@ -1,0 +1,35 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <script data-main="app/config" src="components/requirejs/require.js"></script>
+  <style>
+    body {
+      background: #475BCC;
+      color: #EEE;
+      font-size:8em;
+      text-align:center;
+      font-family: 'helvetica'
+    }
+
+    #temp, #status {
+      display:inline-block;
+    }
+
+    #status.heavy { color:#FFF; }
+    #status.light {color:#BBB; }
+    
+    #statusText {
+      font-size: .4em;
+    }
+    #time {
+      font-size:0.1em;
+    }
+  </style>
+</head>
+<body>
+  <div id="temp"></div>
+  <div id="status"></div>
+  <div id="statusText"></div>
+  <div id="time"></div>
+</body>
+</html>

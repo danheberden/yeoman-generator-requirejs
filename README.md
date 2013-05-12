@@ -6,8 +6,12 @@ A generator for Yeoman.
 ## Getting started
 - Make sure you have [yo](https://github.com/yeoman/yo) installed:
     `npm install -g yo`
-- Install the generator **locally**: `npm install yeoman-generator-require`
-- Run: `yo yeoman-generator-require`
+- Install the generator **locally**: `npm install generator-requirejs`
+- Run: `yo requirejs`
+
+## Demo Application
+
+Run `yo requirejs:demo` to install a demo application
 
 ## License
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
