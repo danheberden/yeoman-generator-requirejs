@@ -80,7 +80,7 @@ AppGenerator.prototype.bower = function bower() {
 };
 
 AppGenerator.prototype.git = function git() {
-  this.copy('.gitignore', '.gitignore');
+  this.copy('gitignore', '.gitignore');
 };
 
 AppGenerator.prototype.configs = function jshint() {
