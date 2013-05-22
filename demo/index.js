@@ -13,7 +13,7 @@ var AppGenerator = module.exports = function AppGenerator(args, options, config)
       options: {
         'skip-install': true,
         promptDefaults: {
-          appname: 'yahooWeatherApp',
+          appname: 'my-weather-app',
           appdescription: 'A `yo requirejs` demo app'
         }
       },
@@ -24,7 +24,7 @@ var AppGenerator = module.exports = function AppGenerator(args, options, config)
     fs.createReadStream(this._sourceRoot + '/index.htm').pipe(fs.createWriteStream(this.env.cwd + '/index.htm'));
     fs.createReadStream(this._sourceRoot + '/main.js').pipe(fs.createWriteStream(this.env.cwd + '/app/main.js'));  
     this.bowerInstall([
-      'yahooWeather'
+      'weather'
     ], { 
       save: true 
     }, function(){});

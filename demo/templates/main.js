@@ -1,17 +1,17 @@
-define(["jquery", "components/yahooWeather/dist/yahooWeather"], function($, yahooWeather) {
+define(["jquery", "components/weather/weather"], function($, weather) {
 
   // get the location
   navigator.geolocation.getCurrentPosition(function(locale) {
 
     var position = [locale.coords.latitude, locale.coords.longitude];
 
-    yahooWeather(position, function(err, weather) {
-      $('#temp').html(weather.condition.temp + 'º');
-      $('#status').html(weather.condition.symbols.join(''))
-        .prop('className', weather.condition.symbolLevel);
+    weather(position, function(err, result) {
+      $('#temp').html(result.condition.temp + 'º');
+      $('#status').html(result.condition.symbols.join(''))
+        .prop('className', result.condition.symbolLevel);
 
-      $('#statusText').html(weather.condition.text.toLowerCase());
-      $('#time').html(weather.title);
+      $('#statusText').html(result.condition.text.toLowerCase());
+      $('#time').html(result.title);
     });
 
   }, function(error) {
