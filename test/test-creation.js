@@ -12,7 +12,7 @@ describe('yeoman-generator-requirejs generator', function () {
         return done(err);
       }
 
-      this.app = helpers.createGenerator('yeoman-generator-requirejs:app', [
+      this.app = helpers.createGenerator('requirejs:app', [
         '../../app'
       ]);
       done();
