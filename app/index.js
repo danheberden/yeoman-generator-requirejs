@@ -50,18 +50,13 @@ AppGenerator.prototype.askFor = function askFor() {
     default: this.appname
   }, {
     name: 'appdescription',
-    message: 'Description:',
+    message: 'Description',
     default: 'An awesome requirejs app'
   }];
 
-  this.prompt(prompts, function (err, props) {
-    if (err) {
-      return this.emit('error', err);
-    }
-
+  this.prompt(prompts, function (props) {
     this.appname = props.appname;
     this.appdescription = props.appdescription;
-
 
     cb();
   }.bind(this));
