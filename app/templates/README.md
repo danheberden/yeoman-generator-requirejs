@@ -49,6 +49,7 @@ modules. Past that, well, the world is your oyster.
 
 ### Tests
 
+Note: you need [phantomJS](http://phantomjs.org) to run the tests.
 The test directory uses `qunit`, which is run using phantomJS
 in the console, but can also be ran by launching the server
 `grunt preview` and going to `localhost:8000/test/index.html`.

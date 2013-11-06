@@ -2,8 +2,8 @@ require.config({
   // make components more sensible
   // expose jquery 
   paths: {
-    "components": "../components",
-    "jquery": "../components/jquery/jquery"
+    "components": "../bower_components",
+    "jquery": "../bower_components/jquery/jquery"
   }
 });
 
