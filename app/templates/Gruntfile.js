@@ -21,7 +21,7 @@ module.exports = function(grunt) {
         stripBanners: true
       },
       dist: {
-        src: ['components/requirejs/require.js', '<%%= concat.dist.dest %>'],
+        src: ['bower_components/requirejs/require.js', '<%%= concat.dist.dest %>'],
         dest: 'dist/require.js'
       },
     },
@@ -95,7 +95,7 @@ module.exports = function(grunt) {
             return [
               // rewrite requirejs to the compiled version
               function(req, res, next) {
-                if (req.url === '/components/requirejs/require.js') {
+                if (req.url === '/bower_components/requirejs/require.js') {
                   req.url = '/dist/require.min.js';
                 }
                 next();
