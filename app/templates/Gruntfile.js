@@ -91,18 +91,16 @@ module.exports = function(grunt) {
         options: {
           keepalive: true,
           port: 8000,
-          middleware: function(connect, options) {
-            return [
+          middleware: function(connect, options, middlewares) {
               // rewrite requirejs to the compiled version
-              function(req, res, next) {
+              middlewares.push(function(req, res, next) {
                 if (req.url === '/bower_components/requirejs/require.js') {
                   req.url = '/dist/require.min.js';
                 }
                 next();
-              },
-              connect.static(options.base),
+              });
 
-            ];
+              return middlewares;
           }
         }
       }
